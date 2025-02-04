@@ -11,61 +11,61 @@ The Bank Library API is a RESTful service built with Node.js and Express, using 
 
 ### Environment Variables
 Create a .env file and include the following:
-DATABASE_URL=your_db_url
-SECRET_KEY=your_secret_key
-PORT=your_port
+- DATABASE_URL=your_db_url
+- SECRET_KEY=your_secret_key
+- PORT=your_port
 
 ### Installation Steps
 1. Clone the repository:
-   git clone https://github.com/yourrepo/bank-library-api.git](https://github.com/bossbtl/bank-library-system-api.git
-   cd bank-library-system-api
+- git clone https://github.com/yourrepo/bank-library-api.git](https://github.com/bossbtl/bank-library-system-api.git
+- cd bank-library-system-api
 
 2. Install dependencies:
-   npm install
+- npm install
 
 3. Install and start MongoDB For MacOs
-  brew tap mongodb/brew
-  brew install mongodb-community
-  brew services start mongodb-community
+- brew tap mongodb/brew
+- brew install mongodb-community
+- brew services start mongodb-community
 
 To restart
-  brew services restart mongodb-community
+- brew services restart mongodb-community
 
 4. Start the server:
-  npm start
+- npm start
 
 or Debug mode
-  DEBUG=express-api:* npm run server
+- DEBUG=express-api:* npm run server
    
    
 ## API Endpoints
 
 ### Authentication
 #### 1. Login
-Endpoint: POST /auth/login
-Description: Generates a JWT token for authentication.
-Request Body: json
+- Endpoint: POST /auth/login
+- Description: Generates a JWT token for authentication.
+- Request Body: json 
 {
     "username": "admin",
     "password": "password"
 }
-Response: json
+- Response: json 
 {
     "token": "your_jwt_token"
 }
 
 ### Books Api for bank library system (Requires JWT Authentication)
 #### 2. Add a Book
-Endpoint: POST /books
-Headers:
-Authorization: Bearer your_jwt_token
-Request Body: json
+- Endpoint: POST /books
+- Headers:
+- Authorization: Bearer your_jwt_token
+- Request Body: json 
 {
     "title": "Title",
     "author": "Author",
     "category": "Category"
 }
-Response: json
+- Response: json 
 {
     "title": "Title",
     "author": "Author",
@@ -75,10 +75,10 @@ Response: json
     "__v": 0
 }
 #### 3. Update a Book
-Endpoint: PUT /books/:id
-Headers:
-Authorization: Bearer your_jwt_token
-Request Body: json
+- Endpoint: PUT /books/:id
+- Headers:
+- Authorization: Bearer your_jwt_token
+- Request Body: json 
 {
     "title": "Title",
     "author": "Author",
@@ -86,16 +86,16 @@ Request Body: json
 }
 
 #### 4. Delete a Book
-Endpoint: DELETE /books/:id
-Headers:
-Authorization: Bearer your_jwt_token
-Response: 204 No Content
+- Endpoint: DELETE /books/:id
+- Headers:
+- Authorization: Bearer your_jwt_token
+- Response: 204 No Content
 
 #### 5. Get All Books
-Endpoint /books
-Headers:
-Authorization: Bearer your_jwt_token
-Response: json
+- Endpoint /books
+- Headers:
+- Authorization: Bearer your_jwt_token
+- Response: json 
 [
     {
         "_id": "mongodb_auto_generate_id",
@@ -108,16 +108,15 @@ Response: json
 ]
 
 #### 6. Search Books
-Endpoint: GET /books
-Headers:
-Authorization: Bearer your_jwt_token
-Query Parameters (Optional):
-- title (string)
-- author (string)
-- category (string)
-- publishedDate (String) e.g., 2025-02-04 or 2025-02-04T08:29:02.278Z
-
-Response: json
+- Endpoint: GET /books
+- Headers:
+- Authorization: Bearer your_jwt_token
+- Query Parameters (Optional):
+   - title (string)
+   - author (string)
+   - category (string)
+   - publishedDate (String) e.g., 2025-02-04 or 2025-02-04T08:29:02.278Z
+- Response: json 
 [
     {
         "_id": "mongodb_auto_generate_id",
