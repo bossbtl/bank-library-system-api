@@ -108,7 +108,7 @@ or Debug mode
 ]
 
 #### 6. Search Books
-- Endpoint: GET /books
+- Endpoint: GET /books/search?title=searchtitle&author=searchauthor&category=searchcategory&publishedDate=2025-02-04
 - Headers:
 - Authorization: Bearer your_jwt_token
 - Query Parameters (Optional):
